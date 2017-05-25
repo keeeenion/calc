@@ -1,0 +1,4 @@
+<div class="container">
+    <summary *ngFor="let f of flows" [preview]="true" [questions]="questions" [flow]="f" ></summary>
+    <div [routerLink]="['/home/']" style="margin-top: 10px" class="button orange">Back</div>
+</div>

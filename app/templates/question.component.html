@@ -1,0 +1,8 @@
+<div class="question">
+    <h2 class="header">{{question_string}}</h2>
+    <h5 class="description">{{question_desc}}</h5>
+
+    <div class="answers">
+        <answer (click)="answered(a.a_id)" *ngFor="let a of answers" [value]="a.value" [amount]="a.amount" ></answer>
+    </div>
+</div>

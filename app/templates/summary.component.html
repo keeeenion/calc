@@ -1,0 +1,19 @@
+<div class="question">
+    <h2 class="header">Summary</h2>
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>Module</th>
+                <th>Price</th>
+                <th *ngIf="!preview" >Edit</th>
+            </tr>
+            <tr *ngFor="let m of modules">
+                <td>{{m.module}}</td>
+                <td>{{m.price | currency:'EUR'}}</td>
+                <td *ngIf="!preview" class="clickable" (click)="redo(m.id)">Re-choose</td>
+            </tr>
+        </table>
+        <div class="total">Total: {{total | currency:'EUR'}}</div>
+    </div>
+</div>

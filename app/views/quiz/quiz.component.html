@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngIf="questions" class="questions">
+        <div *ngFor="let q of questions | keys">
+            <question *ngIf="activeQuestion == q" (answeredEvent)="answeredQuestion($event)" [question]="questions[q]" ></question>
+        </div>
+
+    </div>
+
+    <summary *ngIf="done && !redo" (redoEvent)="goToQuestion($event)" [questions]="questions" [flow]="flow" ></summary>
+    <div *ngIf="done && !redo" [routerLink]="['/all/']" style="margin-top: 10px" class="button green block pull-right">View all</div>
+    <div [routerLink]="['/home/']" style="margin-top: 10px" class="button red block pull-left">Exit</div>
+</div>
